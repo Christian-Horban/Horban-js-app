@@ -1,7 +1,19 @@
 let pokemonList = [
-   {name: 'Bulbasaur', height: 2.4, types: ['grass', ' poison',]},
-   {name: 'Squirtle', height: 1.8, types: 'water'},
-   {name: 'Charmander', height: 2, types: 'fire'}
+   {
+      name: 'Bulbasaur', 
+      height: 2.4, 
+      types: ['grass', ' poison']
+   },
+   {
+      name: 'Squirtle', 
+      height: 1.8, 
+      types: ['water']
+   },
+   {
+      name: 'Charmander', 
+      height: 2, 
+      types: ['fire']
+   }
 ];
 
 //loop for printing pokemonList
