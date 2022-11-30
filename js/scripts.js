@@ -15,7 +15,7 @@ let pokemonList = [
       types: ['fire']
    }
 ];
-
+/*
 //loop for printing pokemonList
 for (let i = 0;
    i <pokemonList.length; i++) {
@@ -28,3 +28,8 @@ for (let i = 0;
 
       }
    }
+*/
+
+   pokemonList.forEach(function(pokemon) {
+      document.write(pokemon.name + " is " + pokemon.height + " feet tall and it is a " + pokemon.types + " type!<br> ");
+   });
