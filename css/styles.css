@@ -13,7 +13,7 @@ body {
 }
 
 .pokemon-header {
-  background-color: var(--primary-color);
+  /**background-color: var(--primary-color);**/
   padding: 7px;
 }
 
@@ -29,6 +29,7 @@ body {
   padding: 12px;
   width: 100%;
   background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .pokemon-list {
