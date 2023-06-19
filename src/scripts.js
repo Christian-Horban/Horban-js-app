@@ -2,7 +2,7 @@ const pokemonRepository = (function () {
     const pokemonList = [];
     const apiLimit = 180; //Controls how many pokemon are loaded
 
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}'; //Calls api limit from above
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}`; //Calls api limit from above
     
       function filterPokemons(query) {
         return pokemonList.filter((pokemon) => {
