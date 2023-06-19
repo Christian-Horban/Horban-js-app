@@ -1,6 +1,10 @@
-let pokemonRepository = (function () {
-    let pokemonList = [];
-    let apiLimit = 150; //Controls how many pokemon are loaded
+const pokemonRepository = (function () {
+    const pokemonList = [];
+    const apiLimit = 150; //Controls how many pokemon are loaded
+
+
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}`; //Calls api limit from above
+    const pokemonListElement = $('.pokemon-list');
 
     function filterPokemon(query) {
 
@@ -13,8 +17,6 @@ let pokemonRepository = (function () {
       });
     }
 
-    let apiUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}`; //Calls api limit from above
-    let pokemonListElement = $('.pokemon-list');
   
     function getAll() {
       return pokemonList;
@@ -53,6 +55,7 @@ let pokemonRepository = (function () {
         button.setAttribute('data-target', '#examplemodal');
 
         const pokemonImage = document.createElement('img');
+        
         pokemonImage.src = pokemon.imageUrlFront;
         button.appendChild(pokemonImage);
 
@@ -76,11 +79,12 @@ let pokemonRepository = (function () {
         .then((response) => response.json())
 
         .then((json) => {
-          json.results.forEach(function (item) {
+          const promises = json.results.map((item) => {
+            const pokemon = {
 
-            let pokemon = {
               name: item.name,
               detailsUrl: item.url,
+
             };
 
             add(pokemon);
@@ -88,8 +92,12 @@ let pokemonRepository = (function () {
 
             return loadDetails(pokemon);
           });
+
+          return Promise.all(promises);
+
         })
-        .catch(function (e) {
+
+        .catch((e) => {
           console.error(e);
         });
     }
@@ -97,7 +105,7 @@ let pokemonRepository = (function () {
     //adding load details function with pokemon details
     function loadDetails(pokemon) {
 
-      let url = pokemon.detailsUrl;
+      const url = pokemon.detailsUrl;
 
       return fetch(url)
 
@@ -105,9 +113,24 @@ let pokemonRepository = (function () {
 
         .then((details) => {
           pokemon.height = details.height;
-          pokemon.types = details.types.map((type) => type.type.name);
+          pokemon.weight = details.weight;
           pokemon.imageUrlFront = details.sprites.front_default;
           pokemon.imageUrlBack = details.sprites.back_default;
+
+          const arrayOfTypes = [];
+
+          details.types.forEach((pokemon) => {
+            arrayOfTypes.push(pokemon.type.name);
+          });
+
+          pokemon.types = arrayOfTypes.join(', ');
+
+          const arrayOfAbilities = [];
+          details.abilities.forEach((ability) => {
+            arrayOfAbilities.push(ability.ability.name);
+          });
+
+          pokemon.abilities = arrayOfAbilities.join(', ');
         })
 
         .catch(function (e) {
@@ -132,15 +155,22 @@ let pokemonRepository = (function () {
       const imageElementBack = $('<img class="modal-img" style="width: 50%">');
       imageElementBack.attr('src', pokem.imageUrlBack);
 
-      const heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
+      const heightElement = $('<p>' + `Height: + pokemon.height + </p>`);
 
-      const typesElement = $('<p>' + 'Types: ' + pokemon.types + '</p>');
+      const weightElement = $('<p>' + `Weight : ${pokemon.weight}</p>`);
+
+      const typesElement = $('<p>' + `Types: : ${pokemon.types}</p>`);
+
+      const abilitiesElement = $('<p>' + `abilities : ${pokemon.abilities}</p>`);
   
       // appends the above elements to the modal body
+      modalTitle.append(nameElement);
       modalBody.append(imageElementFront);
       modalBody.append(imageElementBack)
       modalBody.append(heightElement);
+      modalBody.append(weightElement);
       modalBody.append(typesElement);
+      modalBody.append(abilitiesElement);
       });
     }
   
