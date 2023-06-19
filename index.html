@@ -90,7 +90,7 @@
             class="pokemon-list list-group list-group-horizontal row" 
             >
       </ul>
-      </main>
+      
 
 <!-- modal -->
       <div 
@@ -99,11 +99,12 @@
             tabindex="-1" 
             role="dialog" 
             aria-labelledby="exampleModalLabel"  
-            padding-right: 18px; aria-modal="true"
+            aria-hidden="true"
             >
 
             <div 
-            class="modal-dialog" role="document"
+            class="modal-dialog" 
+            role="document"
             >
                   <div 
                   class="modal-content"
@@ -112,7 +113,8 @@
                         class="modal-header"
                         >
                               <h4 
-                              class="modal-title" id="exampleModalLabel"
+                              class="modal-title" 
+                              id="exampleModalLabel"
                               >
                               Modal title
                               </h4>
@@ -139,10 +141,17 @@
                                     >
                                     Close
                               </button>
+                              <button
+                              type="button"
+                              class="btn btn-primary"
+                              >
+                              Save changes
+                              </button>
                               </div>
                   </div>
             </div>
       </div>
+</main>
 
 <!-- bootstrap dependencies-->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -150,8 +159,8 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
       <!-- js -->
-      <script src="js/promise-polyfill.js"></script>
-      <script src="js/fetch-polyfill.js"></script>
+      <script src="/src/promise-polyfill.js"></script>
+      <script src="src/fetch-polyfill.js"></script>
       <script src="Dist/scripts.min.js"></script>
       
     </body>

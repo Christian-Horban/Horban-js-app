@@ -33,6 +33,12 @@
 
 }
 
+#loading-message {
+  display: flex;
+  justify-content: center;
+  color: blue;
+}
+
 #modal-container {
   position: fixed;
   padding: 20px;
