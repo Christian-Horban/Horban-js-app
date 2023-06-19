@@ -1,6 +1,6 @@
 const pokemonRepository = (function () {
     const pokemonList = [];
-    const apiLimit = 150; //Controls how many pokemon are loaded
+    const apiLimit = 180; //Controls how many pokemon are loaded
 
     const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}'; //Calls api limit from above
     
