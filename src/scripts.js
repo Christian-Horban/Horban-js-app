@@ -3,8 +3,6 @@ const pokemonRepository = (function () {
     const apiLimit = 150; //Controls how many pokemon are loaded
 
 
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}`; //Calls api limit from above
-    const pokemonListElement = $('.pokemon-list');
     
       function filterPokemons(query) {
         return pokemonList.filter((pokemon) => {
@@ -13,6 +11,8 @@ const pokemonRepository = (function () {
           return pokemonLowerCase.startsWith(queryLowerCase);
         });
       }
+
+      const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}'; //Calls api limit from above
     
       const loadingMessage = document.getElementById('loading-message');
     
@@ -61,7 +61,6 @@ const pokemonRepository = (function () {
     
         pokedex.appendChild(listitem);
     
-        // add an event listner to created buttons. Calls the showDetails function.
         button.addEventListener('click', () => {
           showDetails(pokemon);
         });
@@ -78,14 +77,11 @@ const pokemonRepository = (function () {
                 detailsUrl: item.url,
               };
               add(pokemon);
-              // Call loadDetails here for each pokemon
               return loadDetails(pokemon);
             });
-            // Wait for all the Pokemon details to load before hiding the loading message
             return Promise.all(promises);
           })
           .then(() => {
-            // Hide the loading message after all the Pokemon details have loaded
             setTimeout(() => {
               hideLoadingMessage();
             }, 1000); // Delay in milliseconds (e.g., 1000ms = 1s)
@@ -102,20 +98,18 @@ const pokemonRepository = (function () {
         return fetch(url)
           .then((response) => response.json())
           .then((details) => {
-            // Now we add the details to the item
+
             pokemon.imageUrlFront = details.sprites.front_default;
             pokemon.imageUrlBack = details.sprites.back_default;
             pokemon.height = details.height;
             pokemon.weight = details.weight;
     
-            // create a forEach loop to iterate through the API object types and display to the user.
             const arrayOfTypes = [];
             // eslint-disable-next-line no-shadow
             details.types.forEach((pokemon) => {
               arrayOfTypes.push(pokemon.type.name);
             });
     
-            // define a space in between array items
             pokemon.types = arrayOfTypes.join(', ');
     
             const arrayOfAbilities = [];
@@ -133,7 +127,6 @@ const pokemonRepository = (function () {
           });
       }
     
-      // create function that prints details to console when called.
       function showDetails(pokemon) {
         loadDetails(pokemon).then(() => {
           const modalBody = $('.modal-body');
@@ -215,6 +208,5 @@ const pokemonRepository = (function () {
     });
     
     pokemonRepository.loadList().then(() => {
-      // Load the initial list
       pokemonRepository.getAll().forEach(addListPokemon);
     });
