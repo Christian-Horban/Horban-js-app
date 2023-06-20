@@ -96,66 +96,74 @@
                 />
             </form>
         </div>
-        <div class="container">
-            <ul class="pokemon-list list-group row"></ul>
-        </div>
-<!-- Modal -->
-      <div 
-            class="modal-fade"
-            id="exampleModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-      >
-            <div 
-                  class="modal-dialog"
-                  role="document"
-            >
-                  <div 
-                        class="modal-content">
-                        <div 
-                              class="modal-header">
-                              <h5 
-                                    class="modal-title"
-                                    id="exampleModalLabel"
-                                    >
-                                    Modal title
-                              </h5>
-                                    <button 
-                                          type="button"
-                                          class="close"
-                                          data-dismiss="modal"
-                                          aria-label="Close"
-                                          >
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                        </div>
-                        <div 
-                              class="modal-body"
-                              >
-                              <p 
-                                    class="pokemon-height"
-                              ></p>
-                              <img
-                                    class="pokemon-image img-fluid"
-                                    width="150"
-                                    height="150"
-                                    />
-                        </div>
-                        <div class="modal-footer"
-                        >
-                              <button
-                                    type="button"
-                                    class="btn btn-secondary"
-                                    data-dismiss="modal"
-                                    >
-                                          Close
-                              </button>
-                        </div>
-                  </div>
+        <div class="pokedex__container container">
+            <div class="row">
+                <img
+                    src="images/pokedexlogo.png"
+                    alt="Pokedex logo"
+                    class="mx-auto pb-4"
+                />
             </div>
-      </div>
+            <div class="row">
+                <form class="form-inline mx-auto pb-4">
+                    <input
+                        class="form-control search"
+                        type="text"
+                        placeholder="Search"
+                        aria-label="Search"
+                    />
+                </form>
+            </div>
+
+<!-- Modal -->
+
+            <div class="container">
+                <ul class="pokemon-list list-group row"></ul>
+            </div>
+            <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Modal title
+                            </h5>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="pokemon-height"></p>
+                            <img
+                                class="pokemon-image img-fluid"
+                                width="150"
+                                height="150"
+                            />
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <!-- bootstrap dependencies-->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
