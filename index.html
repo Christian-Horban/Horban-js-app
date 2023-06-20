@@ -43,8 +43,8 @@
   <body>
     <div id="loading-message">Loading...</div>
     <header class="container">
-      <nav class="navbar navbar-light" style="background-color: #FFCC00">
-        <a class="navbar-brand" style="color: #0075BE"
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark" >
+        <a class="navbar-brand" href="index.html"
         ><img
             class="ptop"
             src="/img/pokedexlogo.png"
@@ -72,23 +72,25 @@
           <li class="nav-item mx-4">
               <a class="nav-link" href="about.html">About</a>
           </li>
-          
-        <form class="form-inline">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
       </ul>
       </div>
       </nav>
     </header>
 
     <main>
-      <ul class="pokemon-list list-group list-group-horizontal row"></ul>
-
+      <div class="row">
+            <form class="form-inline mx-auto pb-4">
+                <input
+                    class="form-control search"
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                />
+            </form>
+        </div>
+        <div class="container">
+            <ul class="pokemon-list list-group row"></ul>
+        </div>
 <!-- Modal -->
       <div
         class="modal fade"
