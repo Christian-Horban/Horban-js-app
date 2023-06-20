@@ -74,7 +74,7 @@ nav {
 }
 
 .btn-secondary:hover {
-  background-color: var(--button-hover-color);
+  background-color: var(--primary-color);
   opacity: 0.8;
 
 }

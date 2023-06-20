@@ -87,10 +87,24 @@
                   // add the details to the item
                   pokemon.imageUrl = details.sprites.front_default
                   pokemon.height = details.height
-              })
+
+                  const arrayOfTypes = [];
+                  details.types.forEach((pokemon) => {
+                    arrayOfTypes.push(pokemon.type.name);
+                  });
+          
+                  pokemon.types = arrayOfTypes.join(', ');
+          
+                  const arrayOfAbilities = [];
+                  details.abilities.forEach((ability) => {
+                    arrayOfAbilities.push(ability.ability.name);
+                  });
+          
+                  pokemon.abilities = arrayOfAbilities.join(', ');
+                })
               .catch(function (e) {
                   console.error(e)
-              })
+              });
       }
   
       //function that logs pokemon to console
@@ -121,11 +135,19 @@
                   // create imageElement and assign source
                   let imageElement = document.createElement('img')
                   imageElement.src = pokemon.imageUrl
+
+                  let typesElement = $('<p>' + `Types : ${pokemon.types}</p>`)
+    
+                  let abilitiesElement = $(
+                    '<p>' + `abilities : ${pokemon.abilities}</p>`
+                  )
   
                   //append elements to divs
                   modalTitle.append(nameElement)
                   modalBody.append(heightElement)
                   modalBody.append(imageElement)
+                  modalBody.append(typesElement)
+                  modalBody.append(abilitiesElement)
               }
   
               showModal(pokemon)
