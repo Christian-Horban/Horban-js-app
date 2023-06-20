@@ -91,7 +91,7 @@ nav {
 
 }
 
-.modal-body {
+.modal-content {
   border-radius: 20px;
   padding: 20px;
   color: var(--primary-color);
