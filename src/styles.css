@@ -61,8 +61,8 @@ nav {
   border-radius: 10px;
   border-color: var(--primary-color);
   border-width: 2px;
-  background-color: var(--button-color);
-  color: var(--primary-color);
+  background-color: var(--border-color);
+  color: var(--button-color);
 
 }
 
@@ -103,5 +103,5 @@ nav {
 
 .info {
   text-align: left;
-  
+
 }
