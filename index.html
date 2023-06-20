@@ -42,9 +42,37 @@
 
   <body>
     <div id="loading-message">Loading...</div>
-    <header class="page-header">
+    <header class="container">
       <nav class="navbar navbar-light" style="background-color: #FFCC00">
-        <a class="navbar-brand" style="color: #0075BE">Pokedex</a>
+        <a class="navbar-brand" style="color: #0075BE"
+        ><img
+            class="ptop"
+            src="/img/pokedexlogo.png"
+            alt="Pokedex"
+            >
+      </a>
+      <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+      >
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-2">
+          <li class="nav-item">
+              <a class="nav-link active mx-4" href="index.html"
+                  >Home <span class="sr-only">(current)</span></a
+              >
+          </li>
+          <li class="nav-item mx-4">
+              <a class="nav-link" href="about.html">About</a>
+          </li>
+          
         <form class="form-inline">
           <input
             class="form-control mr-sm-2"
@@ -53,6 +81,8 @@
             aria-label="Search"
           />
         </form>
+      </ul>
+      </div>
       </nav>
     </header>
 
