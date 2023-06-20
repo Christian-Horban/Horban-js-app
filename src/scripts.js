@@ -135,7 +135,6 @@
       // assign search bar and pokemon list area to vars to use in functions (DRY)
       let searchBar = document.querySelector('.search')
       let listArea = document.querySelector('.pokemon-list')
-      // searchBar.addEventListener('input', pokemonFilter);
   
       // create pokemonFilter function with searchInput (searchbar.value) as parameter
       function pokemonFilter(searchInput) {
