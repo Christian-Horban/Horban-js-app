@@ -1,11 +1,11 @@
 :root {
-  --default-text-color: ghostwhite;
+  --default-text-color: #41464d;
   --primary-color: #008b8b;
   --border-color: #FFCC00;
   --button-color: #0075BE;
   --button-hover-color: #5EBDFC;
-  --secondary-color: ghostwhite;
   --background-color:#f5f5f5;
+
 }
 
 body { 
@@ -13,15 +13,10 @@ body {
   color: var(--default-text-color);
   text-align: center;
   line-height: 40px;
-  background-color: var(--button-color);
+  background-color: var(--background-color);
 
 }
-body-about {
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
-  text-align: center;
-  line-height: 40px;
-}
+
 
 nav {
   background-color: var(--primary-color);
