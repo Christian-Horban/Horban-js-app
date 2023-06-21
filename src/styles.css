@@ -16,6 +16,13 @@ body {
   background-color: var(--button-color);
 
 }
+body-about {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  line-height: 40px;
+  background-color: var(--default-text-color);
+}
 
 nav {
   background-color: var(--primary-color);
