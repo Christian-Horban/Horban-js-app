@@ -96,6 +96,7 @@ nav {
   border-radius: 20px;
   padding: 20px;
   color: var(--primary-color);
+  background-color: var(--background-color);
 
 }
 
