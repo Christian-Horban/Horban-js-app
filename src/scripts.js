@@ -1,9 +1,10 @@
     let pokemonRepository = (function () {
-      // wrapped listArray in IIFE
       let pokemonList = []
   
       let apiLimit = 150;
+      // sets limit on objects pulled from api
       let apiUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${apiLimit}`
+      // calls set api limit from above
   
       // return object with getAll and add functions assigned as keys
       function add(pokemon) {
