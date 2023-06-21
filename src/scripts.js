@@ -128,17 +128,19 @@
                           '</h1>'
                   )
   
-                  // create height
+                  // create height element and assign source
                   let heightElement = $(
                       '<p>' + 'Height : ' + pokemon.height + '</p>'
                   )
   
-                  // create imageElement and assign source
+                  // create image element and assign source
                   let imageElement = document.createElement('img')
                   imageElement.src = pokemon.imageUrl
 
+                  // create types element and assign source
                   let typesElement = $('<p>' + `Types : ${pokemon.types}</p>`)
     
+                  // create abilities element and assign source
                   let abilitiesElement = $(
                     '<p>' + `abilities : ${pokemon.abilities}</p>`
                   )
