@@ -1,4 +1,10 @@
 JavaScript Pokédex App
+
+![JavaScript Pokédex App Logo](../img/readme.png)
+
+# JavaScript Pokédex App
+...
+
 Overview
 This web application was built as part of the Achievement 1 Project, using HTML, CSS, and JavaScript. The application fetches data from an external API to provide users with an interactive platform for viewing detailed data points about Pokémon.
 
